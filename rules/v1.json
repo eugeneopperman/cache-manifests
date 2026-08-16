@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 2,
-  "updatedOn": "2026-08-15",
+  "revision": 3,
+  "updatedOn": "2026-08-16",
   "_comment": "Bundled fallback. The live copy is fetched from addsaltandco.com/cache/rules/v1.json. EVERY rule here is a community-observed pattern, not published issuer policy — see docs/research/domain-rules.md. Nothing has had a domain-expert pass yet; that is a blocking launch item.",
   "rules": [
     {
