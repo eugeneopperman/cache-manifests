@@ -1,0 +1,360 @@
+{
+  "schemaVersion": 1,
+  "revision": 2,
+  "updatedOn": "2026-08-15",
+  "_comment": "Bundled fallback. The live copy is fetched from addsaltandco.com/cache/rules/v1.json. EVERY rule here is a community-observed pattern, not published issuer policy — see docs/research/domain-rules.md. Nothing has had a domain-expert pass yet; that is a blocking launch item.",
+  "rules": [
+    {
+      "id": "chase.5-24",
+      "issuer": "Chase",
+      "name": "5/24",
+      "kind": "velocityAnyIssuer",
+      "windowMonths": 24,
+      "threshold": 5,
+      "appliesTo": "both",
+      "countsBusinessCards": false,
+      "countsAuthorizedUser": true,
+      "confidence": "wellEstablished",
+      "lastVerified": "2026-08-12",
+      "explanation": "Chase declines almost every application once you've opened 5 or more personal cards at any issuer in the last 24 months. Business cards from most issuers don't count because they don't report to personal bureaus — but Capital One, Discover and TD business cards do.",
+      "sourceNote": "Thousands of consistent community datapoints over a decade. Authorized-user cards count, though they can sometimes be argued off on reconsideration."
+    },
+    {
+      "id": "chase.2-30",
+      "issuer": "Chase",
+      "name": "2/30",
+      "kind": "velocityThisIssuer",
+      "windowMonths": 1,
+      "threshold": 2,
+      "appliesTo": "both",
+      "countsBusinessCards": true,
+      "countsAuthorizedUser": false,
+      "confidence": "observed",
+      "lastVerified": "2026-08-12",
+      "explanation": "Chase rarely approves more than two of its own cards in any 30-day period.",
+      "sourceNote": "Consistent pattern with a meaningful exception rate."
+    },
+    {
+      "id": "chase.48-month",
+      "issuer": "Chase",
+      "name": "48-month rule",
+      "kind": "productFamilyCooldown",
+      "windowMonths": 48,
+      "appliesTo": "personal",
+      "countsBusinessCards": false,
+      "countsAuthorizedUser": false,
+      "confidence": "wellEstablished",
+      "lastVerified": "2026-08-12",
+      "explanation": "No new welcome bonus on a Chase product if you received one on that product in the past 48 months. The Sapphire family shares a single bonus across Preferred and Reserve.",
+      "sourceNote": "Stated in Chase offer terms for the Sapphire family; well-established elsewhere."
+    },
+    {
+      "id": "amex.once-per-lifetime",
+      "issuer": "American Express",
+      "name": "Once per lifetime",
+      "kind": "oncePerLifetime",
+      "appliesTo": "both",
+      "countsBusinessCards": false,
+      "countsAuthorizedUser": false,
+      "confidence": "published",
+      "lastVerified": "2026-08-12",
+      "explanation": "One welcome bonus per card product, ever. Amex offer terms use \"have or have had\" language. Personal and business versions of a card are separate products with separate lifetimes.",
+      "sourceNote": "Stated in Amex offer terms. The single most consequential rule in the hobby — an accidental re-application burns the bonus permanently."
+    },
+    {
+      "id": "amex.2-90",
+      "issuer": "American Express",
+      "name": "2/90",
+      "kind": "velocityThisIssuer",
+      "windowMonths": 3,
+      "threshold": 2,
+      "appliesTo": "both",
+      "countsBusinessCards": true,
+      "countsAuthorizedUser": false,
+      "confidence": "wellEstablished",
+      "lastVerified": "2026-08-12",
+      "explanation": "No more than two Amex credit cards approved in any 90 days.",
+      "sourceNote": "Long-standing community consensus."
+    },
+    {
+      "id": "amex.credit-card-limit",
+      "issuer": "American Express",
+      "name": "5 credit card limit",
+      "kind": "openAccountLimit",
+      "threshold": 5,
+      "appliesTo": "both",
+      "countsBusinessCards": true,
+      "countsAuthorizedUser": false,
+      "confidence": "observed",
+      "lastVerified": "2026-08-12",
+      "explanation": "Amex generally caps you at about five open credit cards at once. Charge cards are counted separately, with a higher limit.",
+      "sourceNote": "Widely reported; the exact cap varies by relationship."
+    },
+    {
+      "id": "citi.1-8",
+      "issuer": "Citi",
+      "name": "1/8",
+      "kind": "velocityThisIssuer",
+      "windowMonths": 1,
+      "threshold": 1,
+      "appliesTo": "personal",
+      "countsBusinessCards": false,
+      "countsAuthorizedUser": false,
+      "confidence": "wellEstablished",
+      "lastVerified": "2026-08-12",
+      "explanation": "No more than one Citi card approved in any 8 days.",
+      "sourceNote": "Long-standing community consensus. Modelled here as a one-month window, which is more conservative than the true 8 days."
+    },
+    {
+      "id": "citi.2-65",
+      "issuer": "Citi",
+      "name": "2/65",
+      "kind": "velocityThisIssuer",
+      "windowMonths": 2,
+      "threshold": 2,
+      "appliesTo": "personal",
+      "countsBusinessCards": false,
+      "countsAuthorizedUser": false,
+      "confidence": "wellEstablished",
+      "lastVerified": "2026-08-12",
+      "explanation": "No more than two Citi cards approved in any 65 days.",
+      "sourceNote": "Long-standing community consensus."
+    },
+    {
+      "id": "citi.48-month-family",
+      "issuer": "Citi",
+      "name": "48-month family rule",
+      "kind": "productFamilyCooldown",
+      "windowMonths": 48,
+      "appliesTo": "both",
+      "countsBusinessCards": false,
+      "countsAuthorizedUser": false,
+      "confidence": "wellEstablished",
+      "lastVerified": "2026-08-12",
+      "explanation": "No bonus if you opened OR CLOSED a card in the same Citi family in the past 48 months. Closing counts, which trips people constantly — tidying up an old card restarts the clock.",
+      "sourceNote": "Stated in Citi offer terms for several families; well-established across the rest."
+    },
+    {
+      "id": "capitalone.1-6",
+      "issuer": "Capital One",
+      "name": "1/6",
+      "kind": "velocityThisIssuer",
+      "windowMonths": 6,
+      "threshold": 1,
+      "appliesTo": "personal",
+      "countsBusinessCards": false,
+      "countsAuthorizedUser": false,
+      "confidence": "observed",
+      "lastVerified": "2026-08-12",
+      "explanation": "Capital One generally approves about one personal card every six months.",
+      "sourceNote": "Consistent pattern with a meaningful exception rate. Capital One also pulls all three credit bureaus, costing an inquiry on each."
+    },
+    {
+      "id": "capitalone.2-30",
+      "issuer": "Capital One",
+      "name": "2/30",
+      "kind": "velocityThisIssuer",
+      "windowMonths": 1,
+      "threshold": 2,
+      "appliesTo": "both",
+      "countsBusinessCards": true,
+      "countsAuthorizedUser": false,
+      "confidence": "observed",
+      "lastVerified": "2026-08-12",
+      "explanation": "No more than two Capital One applications in any 30 days.",
+      "sourceNote": "Community-observed."
+    },
+    {
+      "id": "bofa.2-3-4",
+      "issuer": "Bank of America",
+      "name": "3/12",
+      "kind": "velocityThisIssuer",
+      "windowMonths": 12,
+      "threshold": 3,
+      "appliesTo": "personal",
+      "countsBusinessCards": false,
+      "countsAuthorizedUser": false,
+      "confidence": "wellEstablished",
+      "lastVerified": "2026-08-12",
+      "explanation": "Part of Bank of America's 2/3/4 rule: no more than 2 of its cards in 30 days, 3 in 12 months, or 4 in 24 months.",
+      "sourceNote": "Well-established. Only the 12-month leg is modelled here; the 30-day and 24-month legs are tracked separately."
+    },
+    {
+      "id": "bofa.4-24",
+      "issuer": "Bank of America",
+      "name": "4/24 (own cards)",
+      "kind": "velocityThisIssuer",
+      "windowMonths": 24,
+      "threshold": 4,
+      "appliesTo": "personal",
+      "countsBusinessCards": false,
+      "countsAuthorizedUser": false,
+      "confidence": "wellEstablished",
+      "lastVerified": "2026-08-12",
+      "explanation": "The 24-month leg of Bank of America's 2/3/4 rule: no more than four of its cards in 24 months.",
+      "sourceNote": "Well-established."
+    },
+    {
+      "id": "bofa.7-12",
+      "issuer": "Bank of America",
+      "name": "7/12",
+      "kind": "velocityAnyIssuer",
+      "windowMonths": 12,
+      "threshold": 7,
+      "appliesTo": "personal",
+      "countsBusinessCards": false,
+      "countsAuthorizedUser": true,
+      "confidence": "observed",
+      "lastVerified": "2026-08-12",
+      "explanation": "Bank of America declines applicants with 7 or more new accounts at any issuer in the last 12 months. Preferred Rewards members are treated more leniently.",
+      "sourceNote": "Community-observed, with a meaningful exception rate for existing customers."
+    },
+    {
+      "id": "barclays.6-24",
+      "issuer": "Barclays",
+      "name": "6/24",
+      "kind": "velocityAnyIssuer",
+      "windowMonths": 24,
+      "threshold": 6,
+      "appliesTo": "personal",
+      "countsBusinessCards": false,
+      "countsAuthorizedUser": true,
+      "confidence": "observed",
+      "lastVerified": "2026-08-12",
+      "explanation": "Barclays is sensitive to 6 or more new accounts across all issuers in 24 months. There's no formal published rule — it behaves like a soft threshold rather than a hard cut-off.",
+      "sourceNote": "Community-observed. Barclays is also notably inquiry-sensitive."
+    },
+    {
+      "id": "usbank.velocity",
+      "issuer": "U.S. Bank",
+      "name": "Inquiry sensitivity",
+      "kind": "velocityAnyIssuer",
+      "windowMonths": 12,
+      "threshold": 6,
+      "appliesTo": "personal",
+      "countsBusinessCards": false,
+      "countsAuthorizedUser": false,
+      "confidence": "contested",
+      "lastVerified": "2026-08-12",
+      "explanation": "U.S. Bank has no formal velocity rule, but declines correlate strongly with recent account and inquiry volume. Applicants with an existing banking relationship fare better.",
+      "sourceNote": "Datapoints conflict. Treated as a caution, not a cut-off."
+    }
+  ],
+  "productFamilies": [
+    {
+      "id": "chase.sapphire",
+      "issuer": "Chase",
+      "name": "Chase Sapphire",
+      "members": [
+        "Sapphire Preferred",
+        "Sapphire Reserve"
+      ],
+      "isBusiness": false
+    },
+    {
+      "id": "chase.freedom",
+      "issuer": "Chase",
+      "name": "Chase Freedom",
+      "members": [
+        "Freedom Flex",
+        "Freedom Unlimited",
+        "Freedom Rise"
+      ],
+      "isBusiness": false
+    },
+    {
+      "id": "chase.ink",
+      "issuer": "Chase",
+      "name": "Chase Ink",
+      "members": [
+        "Ink Business Cash",
+        "Ink Business Unlimited",
+        "Ink Business Preferred",
+        "Ink Business Premier"
+      ],
+      "isBusiness": true
+    },
+    {
+      "id": "amex.gold",
+      "issuer": "American Express",
+      "name": "Amex Gold",
+      "members": [
+        "American Express Gold Card",
+        "Gold Card"
+      ],
+      "isBusiness": false
+    },
+    {
+      "id": "amex.gold.business",
+      "issuer": "American Express",
+      "name": "Amex Business Gold",
+      "members": [
+        "American Express Business Gold Card",
+        "Business Gold"
+      ],
+      "isBusiness": true
+    },
+    {
+      "id": "amex.platinum",
+      "issuer": "American Express",
+      "name": "Amex Platinum",
+      "members": [
+        "The Platinum Card",
+        "Platinum Card"
+      ],
+      "isBusiness": false
+    },
+    {
+      "id": "amex.platinum.business",
+      "issuer": "American Express",
+      "name": "Amex Business Platinum",
+      "members": [
+        "The Business Platinum Card",
+        "Business Platinum"
+      ],
+      "isBusiness": true
+    },
+    {
+      "id": "citi.strata",
+      "issuer": "Citi",
+      "name": "Citi Strata",
+      "members": [
+        "Strata Premier",
+        "Strata Elite",
+        "Premier"
+      ],
+      "isBusiness": false
+    },
+    {
+      "id": "citi.double-cash",
+      "issuer": "Citi",
+      "name": "Citi Double Cash",
+      "members": [
+        "Double Cash"
+      ],
+      "isBusiness": false
+    },
+    {
+      "id": "capitalone.venture",
+      "issuer": "Capital One",
+      "name": "Capital One Venture",
+      "members": [
+        "Venture Rewards",
+        "Venture",
+        "Venture X",
+        "VentureOne"
+      ],
+      "isBusiness": false
+    },
+    {
+      "id": "bofa.premium-rewards",
+      "issuer": "Bank of America",
+      "name": "BofA Premium Rewards",
+      "members": [
+        "Premium Rewards",
+        "Premium Rewards Elite"
+      ],
+      "isBusiness": false
+    }
+  ]
+}

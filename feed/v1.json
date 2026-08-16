@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "revision": 3,
+  "updatedOn": "2026-08-15",
+  "_comment": "RESEARCHED 2026-08-15, NOT YET CURATOR-VERIFIED. Terms for all six offers were read on the ISSUER'S OWN PAGE, and every sourceURL has been loaded and confirmed to resolve. That is deliberate policy, not incidental: an earlier revision carried plausible-looking URLs that had never been opened, and one of them 404'd, so 'Read the terms' sent the user nowhere. A sourceURL that has not been opened is not a source. Still NOT the curator sign-off PRD §16.3 requires before launch — treat this as a first pass to check, not as verified data. Three standing editorial rules. (1) verifiedOn is the date the source was actually read; where a term could only be found in a secondhand article, use that article's publication date instead, so the offer correctly renders as stale rather than looking freshly checked. (2) Targeted 'as high as' offers are excluded entirely — Amex's headline bonuses are not uniformly available, and stating one as a flat fact tells a user they can get something they may not (README rule 5). (3) Anchors are taken from the offer's own wording: Chase Total Checking runs its 90 days from OFFER ENROLLMENT, not account opening, which is why it uses the 'enrolled' anchor. Getting that wrong starts the countdown on the wrong day. Brokerage and freebie are EMPTY on purpose: nothing current enough was found, and a padded feed is worse than a short one. See PRD §6.8.",
+  "offers": [
+    {
+      "id": "chase.total-checking.400",
+      "institution": "Chase",
+      "title": "Total Checking",
+      "category": "bank",
+      "valueCents": 40000,
+      "pointsAmount": null,
+      "summary": "Open a Total Checking account and receive qualifying direct deposits totalling $1,000 within 90 days.",
+      "sourceURL": "https://account.chase.com/consumer/banking/seo",
+      "states": [],
+      "verifiedOn": "2026-08-15",
+      "expiresOn": "2026-10-14",
+      "annualFeeCents": null,
+      "notes": "The 90 days run from OFFER ENROLLMENT, not from account opening — enrol first, then start the direct deposits. Not available to existing Chase checking customers, to anyone whose account closed within 90 days, or closed with a negative balance in the last 3 years. One checking bonus every two years from the last enrolment date. Bonus pays within 15 days of completing the requirement.",
+      "requirements": [
+        {
+          "kind": "directDeposit",
+          "targetCents": 100000,
+          "targetCount": null,
+          "targetDays": null,
+          "perItemMinCents": null,
+          "anchor": "enrolled",
+          "windowDays": 90,
+          "windowMonths": null,
+          "isBlocking": true,
+          "label": "Direct deposits totalling $1,000"
+        }
+      ]
+    },
+    {
+      "id": "capitalone.360-checking.250",
+      "institution": "Capital One",
+      "title": "360 Checking",
+      "category": "bank",
+      "valueCents": 25000,
+      "pointsAmount": null,
+      "summary": "Open a 360 Checking account with the promo code and receive two direct deposits of $500 or more within 75 days.",
+      "sourceURL": "https://www.capitalone.com/bank/checking250/",
+      "states": [],
+      "verifiedOn": "2026-08-15",
+      "expiresOn": null,
+      "annualFeeCents": null,
+      "notes": "Promo code CHECKING250 must be used at application. Not eligible if you have held a 360 Checking, Simply Checking or Total Control Checking account since 1 January 2024. Bonus can take up to 60 days after the requirement is met, so allow ~135 days from opening.",
+      "requirements": [
+        {
+          "kind": "directDeposit",
+          "targetCents": 100000,
+          "targetCount": 2,
+          "targetDays": null,
+          "perItemMinCents": 50000,
+          "anchor": "opened",
+          "windowDays": 75,
+          "windowMonths": null,
+          "isBlocking": true,
+          "label": "2 direct deposits of $500 or more"
+        }
+      ]
+    },
+    {
+      "id": "citi.checking.500",
+      "institution": "Citi",
+      "title": "Checking",
+      "category": "bank",
+      "valueCents": 50000,
+      "pointsAmount": null,
+      "summary": "Deposit $30,000 in new-to-Citi funds within 45 days and maintain the balance for a further 45 days.",
+      "sourceURL": "https://www.citi.com/banking/special-offers",
+      "states": [],
+      "verifiedOn": "2026-08-15",
+      "expiresOn": "2026-10-26",
+      "annualFeeCents": null,
+      "notes": "A balance-hold offer, not a direct-deposit one. The balance on day 45 sets the bonus tier, and payout lands between day 90 and day 120 — so the money is committed for about four months, not the 45 days the requirement implies. Weigh that opportunity cost against the bonus. Funds must be new to Citibank. A $1,500 tier exists at a much larger balance. Offer runs 14 April to 26 October 2026, new checking customers only.",
+      "requirements": [
+        {
+          "kind": "cumulativeDeposit",
+          "targetCents": 3000000,
+          "targetCount": null,
+          "targetDays": null,
+          "perItemMinCents": null,
+          "anchor": "opened",
+          "windowDays": 45,
+          "windowMonths": null,
+          "isBlocking": true,
+          "label": "Deposit $30,000 in new funds"
+        },
+        {
+          "kind": "holdingPeriod",
+          "targetCents": null,
+          "targetCount": null,
+          "targetDays": 45,
+          "perItemMinCents": null,
+          "anchor": "funded",
+          "windowDays": null,
+          "windowMonths": null,
+          "isBlocking": true,
+          "label": "Maintain the balance 45 days"
+        }
+      ]
+    },
+    {
+      "id": "chase.sapphire-preferred.75k",
+      "institution": "Chase",
+      "title": "Sapphire Preferred",
+      "category": "card",
+      "valueCents": 93750,
+      "pointsAmount": 75000,
+      "summary": "Earn 75,000 bonus points after spending $5,000 on purchases in the first 3 months.",
+      "sourceURL": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred",
+      "states": [],
+      "verifiedOn": "2026-08-15",
+      "expiresOn": null,
+      "annualFeeCents": 9500,
+      "notes": "Subject to Chase 5/24. The Sapphire bonus is once per 48 months across the whole family, counted from when you last received one. The 100,000-point promotion ended 30 July 2026; 75,000 is the standard offer. Valued here at 1.25c per point.",
+      "requirements": [
+        {
+          "kind": "minSpend",
+          "targetCents": 500000,
+          "targetCount": null,
+          "targetDays": null,
+          "perItemMinCents": null,
+          "anchor": "opened",
+          "windowDays": null,
+          "windowMonths": 3,
+          "isBlocking": true,
+          "label": "Spend $5,000"
+        }
+      ]
+    },
+    {
+      "id": "capitalone.venture.75k",
+      "institution": "Capital One",
+      "title": "Venture Rewards",
+      "category": "card",
+      "valueCents": 75000,
+      "pointsAmount": 75000,
+      "summary": "Earn 75,000 bonus miles after spending $4,000 on purchases in the first 3 months.",
+      "sourceURL": "https://www.capitalone.com/credit-cards/venture/",
+      "states": [],
+      "verifiedOn": "2026-08-15",
+      "expiresOn": null,
+      "annualFeeCents": 9500,
+      "notes": "Capital One typically pulls all three bureaus. Valued at the issuer's own stated equivalent of $750 in travel rather than an aspirational transfer valuation.",
+      "requirements": [
+        {
+          "kind": "minSpend",
+          "targetCents": 400000,
+          "targetCount": null,
+          "targetDays": null,
+          "perItemMinCents": null,
+          "anchor": "opened",
+          "windowDays": null,
+          "windowMonths": 3,
+          "isBlocking": true,
+          "label": "Spend $4,000"
+        }
+      ]
+    },
+    {
+      "id": "citi.strata-premier.60k",
+      "institution": "Citi",
+      "title": "Strata Premier",
+      "category": "card",
+      "valueCents": 60000,
+      "pointsAmount": 60000,
+      "summary": "Earn 60,000 bonus ThankYou points after spending $4,000 on purchases in the first 3 months.",
+      "sourceURL": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card",
+      "states": [],
+      "verifiedOn": "2026-08-15",
+      "expiresOn": null,
+      "annualFeeCents": 9500,
+      "notes": "Citi applies a 48-month rule across the ThankYou premium family, and separately limits application velocity (commonly cited as 1 card per 8 days and 2 per 65 days). Valued at the issuer's own stated equivalent of $600.",
+      "requirements": [
+        {
+          "kind": "minSpend",
+          "targetCents": 400000,
+          "targetCount": null,
+          "targetDays": null,
+          "perItemMinCents": null,
+          "anchor": "opened",
+          "windowDays": null,
+          "windowMonths": 3,
+          "isBlocking": true,
+          "label": "Spend $4,000"
+        }
+      ]
+    }
+  ]
+}
