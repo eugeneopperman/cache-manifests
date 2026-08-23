@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "userAgent": "CacheOfferHarvester/1 (+https://github.com/eugeneopperman/cache-manifests)",
+  "sources": [
+    {
+      "id": "doctorofcredit",
+      "name": "Doctor of Credit",
+      "kind": "rss",
+      "url": "https://www.doctorofcredit.com/feed/",
+      "enabled": true,
+      "match": ["bonus", "checking", "savings", "offer", "promotion", "sign-up", "signup"],
+      "note": "robots.txt permits, Crawl-delay 600. One request per run."
+    },
+    {
+      "id": "nerdwallet",
+      "name": "NerdWallet",
+      "kind": "rss",
+      "url": "https://www.nerdwallet.com/blog/feed/",
+      "enabled": true,
+      "match": ["bonus", "checking", "savings", "offer", "promotion", "sign-up", "signup"],
+      "note": "Their own published RSS, not a scrape of the comparison tables. robots.txt does not disallow this path, but their Terms of Use govern reuse — leads only, and switch this off with enabled:false if they object."
+    },
+    {
+      "id": "chase-checking",
+      "name": "Chase — checking offers",
+      "kind": "page",
+      "url": "https://www.chase.com/personal/checking",
+      "enabled": true,
+      "note": "Primary source. Change detection only: issuer pages are JS-rendered and session-targeted, so this raises 'the page moved' and never 'here is an offer'."
+    },
+    {
+      "id": "capitalone-checking",
+      "name": "Capital One — checking offers",
+      "kind": "page",
+      "url": "https://www.capitalone.com/bank/checking-accounts/",
+      "enabled": true,
+      "note": "Primary source. Change detection only — see chase-checking."
+    }
+  ]
+}

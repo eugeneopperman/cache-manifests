@@ -1,0 +1,86 @@
+name: Harvest offer candidates
+
+# Weekly, and on demand. Monday morning UK time, so the queue is waiting at the start of
+# the week rather than landing in the middle of one.
+#
+# This job **cannot publish**. It writes harvester/candidates.json and opens a pull
+# request; feed/v1.json is only ever changed by a person running the publish flow after
+# reading an issuer's actual terms. See harvester/README.md for why that line exists.
+on:
+  schedule:
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  # A manual run while the weekly one is in flight should replace it, not race it onto
+  # the same branch.
+  group: harvest
+  cancel-in-progress: true
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # Fast, and first. The harvester's judgement — what counts as relevant, what counts
+      # as the same offer twice, and above all that it never writes the feed — is pinned
+      # by these. A broken harvester should fail here, before it touches the network.
+      - name: Test
+        run: python3 harvester/test_harvest.py
+
+      - name: Harvest
+        run: python3 harvester/harvest.py | tee harvest.log
+
+      - name: Open a pull request if anything is new
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          if git diff --quiet -- harvester/candidates.json; then
+            echo "No change to candidates.json — nothing to review."
+            exit 0
+          fi
+
+          git config user.name  "cache-harvester"
+          git config user.email "noreply@github.com"
+
+          BRANCH=harvest/candidates
+          git checkout -B "$BRANCH"
+          git add harvester/candidates.json
+          git commit -m "Offer candidates — $(date -u +%Y-%m-%d)"
+          # Force, because this is a rolling queue on a fixed branch rather than a
+          # sequence of independent changes. An unreviewed week should be superseded by
+          # the next one, not stack up behind it.
+          git push --force origin "$BRANCH"
+
+          # gh exits non-zero when a PR already exists for the branch. That is the normal
+          # case on the second week running, and the push above has already updated it.
+          gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "Offer candidates — $(date -u +%Y-%m-%d)" \
+            --body-file - <<'BODY' || echo "A pull request is already open for $BRANCH; it now has the latest candidates."
+          Leads found by `harvester/harvest.py`. **Nothing here is verified.**
+
+          Each candidate says a source mentioned an offer. Before any of it reaches
+          `feed/v1.json`:
+
+          1. Open the **issuer's own page** and read the terms there. A blog headline is a
+             lead, not a source.
+          2. Confirm the `sourceURL` you intend to publish actually resolves. An earlier
+             feed revision shipped a URL nobody had opened and it 404'd, which is why this
+             is written down.
+          3. Add the offer through the normal publish flow, which stamps `verifiedOn` with
+             the day *you* checked it.
+          4. Move anything you have rejected into `dismissed` so it is not raised again.
+
+          Merging this PR only records the queue. It publishes nothing.
+          BODY
