@@ -44,17 +44,21 @@ jobs:
         run: |
           set -euo pipefail
 
-          if git diff --quiet -- harvester/candidates.json; then
+          git config user.name  "cache-harvester"
+          git config user.email "noreply@github.com"
+
+          # Stage first, then compare against the index. `git diff` alone reports only
+          # tracked files, so the very first run — where candidates.json is brand new and
+          # untracked — looked identical to a quiet week and opened no pull request. That
+          # is exactly the run this most needed to work.
+          git add harvester/candidates.json
+          if git diff --cached --quiet -- harvester/candidates.json; then
             echo "No change to candidates.json — nothing to review."
             exit 0
           fi
 
-          git config user.name  "cache-harvester"
-          git config user.email "noreply@github.com"
-
           BRANCH=harvest/candidates
           git checkout -B "$BRANCH"
-          git add harvester/candidates.json
           git commit -m "Offer candidates — $(date -u +%Y-%m-%d)"
           # Force, because this is a rolling queue on a fixed branch rather than a
           # sequence of independent changes. An unreviewed week should be superseded by
