@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "generatedOn": "2026-08-23",
+  "candidates": [
+    {
+      "id": "181d957982f290c0",
+      "source": "doctorofcredit",
+      "sourceURL": "https://www.doctorofcredit.com/targeted-amex-offer-apple-pay-spend-250-receive-50-statement-credit/",
+      "headline": "[Targeted] AmEx Offer: Use Apple Pay Three Times & Receive $10 Statement Credit",
+      "publishedOn": "2026-08-22",
+      "seenOn": "2026-08-23",
+      "guessedInstitution": "American Express",
+      "guessedValueCents": 1000,
+      "status": "new",
+      "note": "Lead only \u2014 nobody has read these terms. Open the issuer's own page before publishing."
+    },
+    {
+      "id": "c582aa5606563a4d",
+      "source": "doctorofcredit",
+      "sourceURL": "https://www.doctorofcredit.com/ga-nc-sc-south-state-bank-100-checking-bonus-direct-deposit-not-required/",
+      "headline": "[AL, CO, FL, GA, NC, SC, TX, VA] South State Bank $300 Checking Bonus \u2013 Direct Deposit Not Required",
+      "publishedOn": "2026-08-22",
+      "seenOn": "2026-08-23",
+      "guessedInstitution": null,
+      "guessedValueCents": 30000,
+      "status": "new",
+      "note": "Lead only \u2014 nobody has read these terms. Open the issuer's own page before publishing."
+    },
+    {
+      "id": "1bbfa30b8a23c0ad",
+      "source": "doctorofcredit",
+      "sourceURL": "https://www.doctorofcredit.com/aven-rewards-checking-rewards-visa-5-back-on-all-purchases-up-to-25000-each-year-requires-25000-balance/",
+      "headline": "Aven Rewards Checking + Rewards Visa: 5% Back On All Purchases (Up To $25,000 Each Year), Requires $25,000 Balance",
+      "publishedOn": "2026-08-21",
+      "seenOn": "2026-08-23",
+      "guessedInstitution": null,
+      "guessedValueCents": 2500000,
+      "status": "new",
+      "note": "Lead only \u2014 nobody has read these terms. Open the issuer's own page before publishing."
+    },
+    {
+      "id": "a7b452169807bc2e",
+      "source": "doctorofcredit",
+      "sourceURL": "https://www.doctorofcredit.com/wells-fargo-500-checking-bonus/",
+      "headline": "Wells Fargo $500 Checking Bonus",
+      "publishedOn": "2026-08-21",
+      "seenOn": "2026-08-23",
+      "guessedInstitution": "Wells Fargo",
+      "guessedValueCents": 50000,
+      "status": "new",
+      "note": "Lead only \u2014 nobody has read these terms. Open the issuer's own page before publishing."
+    },
+    {
+      "id": "0acf1783dd24b980",
+      "source": "doctorofcredit",
+      "sourceURL": "https://www.doctorofcredit.com/new-card-review-rakuten-american-express-card-with-extra-earnings-on-rakuten-shopping-dining/",
+      "headline": "(Upcoming $200 Bonus) Rakuten American Express Card With Extra Earnings On Rakuten Shopping & Dining",
+      "publishedOn": "2026-08-21",
+      "seenOn": "2026-08-23",
+      "guessedInstitution": "American Express",
+      "guessedValueCents": 20000,
+      "status": "new",
+      "note": "Lead only \u2014 nobody has read these terms. Open the issuer's own page before publishing."
+    }
+  ],
+  "dismissed": [],
+  "pageHashes": {
+    "chase-checking": "38f47fba69e5a17726655251cae42fb78f7c79853c01341e09b3c8a64c911119",
+    "capitalone-checking": "38de587f823fd7263a07537c1285880fa0082f4b4953135f29fca2bc75fb95fb"
+  }
+}
