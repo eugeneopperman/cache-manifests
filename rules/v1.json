@@ -1,360 +1,1015 @@
 {
-  "schemaVersion": 1,
-  "revision": 3,
-  "updatedOn": "2026-08-16",
-  "_comment": "Bundled fallback. The live copy is fetched from addsaltandco.com/cache/rules/v1.json. EVERY rule here is a community-observed pattern, not published issuer policy — see docs/research/domain-rules.md. Nothing has had a domain-expert pass yet; that is a blocking launch item.",
-  "rules": [
-    {
-      "id": "chase.5-24",
-      "issuer": "Chase",
-      "name": "5/24",
-      "kind": "velocityAnyIssuer",
-      "windowMonths": 24,
-      "threshold": 5,
-      "appliesTo": "both",
-      "countsBusinessCards": false,
-      "countsAuthorizedUser": true,
-      "confidence": "wellEstablished",
-      "lastVerified": "2026-08-12",
-      "explanation": "Chase declines almost every application once you've opened 5 or more personal cards at any issuer in the last 24 months. Business cards from most issuers don't count because they don't report to personal bureaus — but Capital One, Discover and TD business cards do.",
-      "sourceNote": "Thousands of consistent community datapoints over a decade. Authorized-user cards count, though they can sometimes be argued off on reconsideration."
-    },
-    {
-      "id": "chase.2-30",
-      "issuer": "Chase",
-      "name": "2/30",
-      "kind": "velocityThisIssuer",
-      "windowMonths": 1,
-      "threshold": 2,
-      "appliesTo": "both",
-      "countsBusinessCards": true,
-      "countsAuthorizedUser": false,
-      "confidence": "observed",
-      "lastVerified": "2026-08-12",
-      "explanation": "Chase rarely approves more than two of its own cards in any 30-day period.",
-      "sourceNote": "Consistent pattern with a meaningful exception rate."
-    },
-    {
-      "id": "chase.48-month",
-      "issuer": "Chase",
-      "name": "48-month rule",
-      "kind": "productFamilyCooldown",
-      "windowMonths": 48,
-      "appliesTo": "personal",
-      "countsBusinessCards": false,
-      "countsAuthorizedUser": false,
-      "confidence": "wellEstablished",
-      "lastVerified": "2026-08-12",
-      "explanation": "No new welcome bonus on a Chase product if you received one on that product in the past 48 months. The Sapphire family shares a single bonus across Preferred and Reserve.",
-      "sourceNote": "Stated in Chase offer terms for the Sapphire family; well-established elsewhere."
-    },
-    {
-      "id": "amex.once-per-lifetime",
-      "issuer": "American Express",
-      "name": "Once per lifetime",
-      "kind": "oncePerLifetime",
-      "appliesTo": "both",
-      "countsBusinessCards": false,
-      "countsAuthorizedUser": false,
-      "confidence": "published",
-      "lastVerified": "2026-08-12",
-      "explanation": "One welcome bonus per card product, ever. Amex offer terms use \"have or have had\" language. Personal and business versions of a card are separate products with separate lifetimes.",
-      "sourceNote": "Stated in Amex offer terms. The single most consequential rule in the hobby — an accidental re-application burns the bonus permanently."
-    },
-    {
-      "id": "amex.2-90",
-      "issuer": "American Express",
-      "name": "2/90",
-      "kind": "velocityThisIssuer",
-      "windowMonths": 3,
-      "threshold": 2,
-      "appliesTo": "both",
-      "countsBusinessCards": true,
-      "countsAuthorizedUser": false,
-      "confidence": "wellEstablished",
-      "lastVerified": "2026-08-12",
-      "explanation": "No more than two Amex credit cards approved in any 90 days.",
-      "sourceNote": "Long-standing community consensus."
-    },
-    {
-      "id": "amex.credit-card-limit",
-      "issuer": "American Express",
-      "name": "5 credit card limit",
-      "kind": "openAccountLimit",
-      "threshold": 5,
-      "appliesTo": "both",
-      "countsBusinessCards": true,
-      "countsAuthorizedUser": false,
-      "confidence": "observed",
-      "lastVerified": "2026-08-12",
-      "explanation": "Amex generally caps you at about five open credit cards at once. Charge cards are counted separately, with a higher limit.",
-      "sourceNote": "Widely reported; the exact cap varies by relationship."
-    },
-    {
-      "id": "citi.1-8",
-      "issuer": "Citi",
-      "name": "1/8",
-      "kind": "velocityThisIssuer",
-      "windowMonths": 1,
-      "threshold": 1,
-      "appliesTo": "personal",
-      "countsBusinessCards": false,
-      "countsAuthorizedUser": false,
-      "confidence": "wellEstablished",
-      "lastVerified": "2026-08-12",
-      "explanation": "No more than one Citi card approved in any 8 days.",
-      "sourceNote": "Long-standing community consensus. Modelled here as a one-month window, which is more conservative than the true 8 days."
-    },
-    {
-      "id": "citi.2-65",
-      "issuer": "Citi",
-      "name": "2/65",
-      "kind": "velocityThisIssuer",
-      "windowMonths": 2,
-      "threshold": 2,
-      "appliesTo": "personal",
-      "countsBusinessCards": false,
-      "countsAuthorizedUser": false,
-      "confidence": "wellEstablished",
-      "lastVerified": "2026-08-12",
-      "explanation": "No more than two Citi cards approved in any 65 days.",
-      "sourceNote": "Long-standing community consensus."
-    },
-    {
-      "id": "citi.48-month-family",
-      "issuer": "Citi",
-      "name": "48-month family rule",
-      "kind": "productFamilyCooldown",
-      "windowMonths": 48,
-      "appliesTo": "both",
-      "countsBusinessCards": false,
-      "countsAuthorizedUser": false,
-      "confidence": "wellEstablished",
-      "lastVerified": "2026-08-12",
-      "explanation": "No bonus if you opened OR CLOSED a card in the same Citi family in the past 48 months. Closing counts, which trips people constantly — tidying up an old card restarts the clock.",
-      "sourceNote": "Stated in Citi offer terms for several families; well-established across the rest."
-    },
-    {
-      "id": "capitalone.1-6",
-      "issuer": "Capital One",
-      "name": "1/6",
-      "kind": "velocityThisIssuer",
-      "windowMonths": 6,
-      "threshold": 1,
-      "appliesTo": "personal",
-      "countsBusinessCards": false,
-      "countsAuthorizedUser": false,
-      "confidence": "observed",
-      "lastVerified": "2026-08-12",
-      "explanation": "Capital One generally approves about one personal card every six months.",
-      "sourceNote": "Consistent pattern with a meaningful exception rate. Capital One also pulls all three credit bureaus, costing an inquiry on each."
-    },
-    {
-      "id": "capitalone.2-30",
-      "issuer": "Capital One",
-      "name": "2/30",
-      "kind": "velocityThisIssuer",
-      "windowMonths": 1,
-      "threshold": 2,
-      "appliesTo": "both",
-      "countsBusinessCards": true,
-      "countsAuthorizedUser": false,
-      "confidence": "observed",
-      "lastVerified": "2026-08-12",
-      "explanation": "No more than two Capital One applications in any 30 days.",
-      "sourceNote": "Community-observed."
-    },
-    {
-      "id": "bofa.2-3-4",
-      "issuer": "Bank of America",
-      "name": "3/12",
-      "kind": "velocityThisIssuer",
-      "windowMonths": 12,
-      "threshold": 3,
-      "appliesTo": "personal",
-      "countsBusinessCards": false,
-      "countsAuthorizedUser": false,
-      "confidence": "wellEstablished",
-      "lastVerified": "2026-08-12",
-      "explanation": "Part of Bank of America's 2/3/4 rule: no more than 2 of its cards in 30 days, 3 in 12 months, or 4 in 24 months.",
-      "sourceNote": "Well-established. Only the 12-month leg is modelled here; the 30-day and 24-month legs are tracked separately."
-    },
-    {
-      "id": "bofa.4-24",
-      "issuer": "Bank of America",
-      "name": "4/24 (own cards)",
-      "kind": "velocityThisIssuer",
-      "windowMonths": 24,
-      "threshold": 4,
-      "appliesTo": "personal",
-      "countsBusinessCards": false,
-      "countsAuthorizedUser": false,
-      "confidence": "wellEstablished",
-      "lastVerified": "2026-08-12",
-      "explanation": "The 24-month leg of Bank of America's 2/3/4 rule: no more than four of its cards in 24 months.",
-      "sourceNote": "Well-established."
-    },
-    {
-      "id": "bofa.7-12",
-      "issuer": "Bank of America",
-      "name": "7/12",
-      "kind": "velocityAnyIssuer",
-      "windowMonths": 12,
-      "threshold": 7,
-      "appliesTo": "personal",
-      "countsBusinessCards": false,
-      "countsAuthorizedUser": true,
-      "confidence": "observed",
-      "lastVerified": "2026-08-12",
-      "explanation": "Bank of America declines applicants with 7 or more new accounts at any issuer in the last 12 months. Preferred Rewards members are treated more leniently.",
-      "sourceNote": "Community-observed, with a meaningful exception rate for existing customers."
-    },
-    {
-      "id": "barclays.6-24",
-      "issuer": "Barclays",
-      "name": "6/24",
-      "kind": "velocityAnyIssuer",
-      "windowMonths": 24,
-      "threshold": 6,
-      "appliesTo": "personal",
-      "countsBusinessCards": false,
-      "countsAuthorizedUser": true,
-      "confidence": "observed",
-      "lastVerified": "2026-08-12",
-      "explanation": "Barclays is sensitive to 6 or more new accounts across all issuers in 24 months. There's no formal published rule — it behaves like a soft threshold rather than a hard cut-off.",
-      "sourceNote": "Community-observed. Barclays is also notably inquiry-sensitive."
-    },
-    {
-      "id": "usbank.velocity",
-      "issuer": "U.S. Bank",
-      "name": "Inquiry sensitivity",
-      "kind": "velocityAnyIssuer",
-      "windowMonths": 12,
-      "threshold": 6,
-      "appliesTo": "personal",
-      "countsBusinessCards": false,
-      "countsAuthorizedUser": false,
-      "confidence": "contested",
-      "lastVerified": "2026-08-12",
-      "explanation": "U.S. Bank has no formal velocity rule, but declines correlate strongly with recent account and inquiry volume. Applicants with an existing banking relationship fare better.",
-      "sourceNote": "Datapoints conflict. Treated as a caution, not a cut-off."
-    }
+  "_comment" : "Bundled fallback. The live copy is fetched from addsaltandco.com/cache/rules/v1.json. EVERY rule here is a community-observed pattern, not published issuer policy — see docs/research/domain-rules.md. Nothing has had a domain-expert pass yet; that is a blocking launch item.",
+  "bankProducts" : {
+    "Bank of America" : [
+      "Advantage Plus Banking",
+      "Advantage SafeBalance Banking",
+      "Advantage Relationship Banking",
+      "Business Advantage Fundamentals"
+    ],
+    "Barclays" : [
+      "Online Savings",
+      "Tiered Savings"
+    ],
+    "Capital One" : [
+      "360 Checking",
+      "360 Performance Savings",
+      "Business Checking"
+    ],
+    "Chase" : [
+      "Total Checking",
+      "Premier Plus Checking",
+      "Sapphire Checking",
+      "Chase Savings",
+      "Business Complete Banking",
+      "College Checking",
+      "Secure Banking"
+    ],
+    "Citi" : [
+      "Regular Checking",
+      "Access Account",
+      "Citi Priority",
+      "Citigold",
+      "Citi Savings"
+    ],
+    "Discover" : [
+      "Cashback Debit",
+      "Online Savings"
+    ],
+    "Fifth Third" : [
+      "Momentum Checking",
+      "Preferred Checking"
+    ],
+    "Goldman Sachs" : [
+      "Marcus Online Savings",
+      "Marcus High-Yield CD"
+    ],
+    "HSBC" : [
+      "Premier Checking",
+      "Everyday Savings"
+    ],
+    "Navy Federal Credit Union" : [
+      "Free Active Duty Checking",
+      "Flagship Checking",
+      "Free EveryDay Checking"
+    ],
+    "PenFed" : [
+      "Access America Checking",
+      "Free Checking",
+      "Premium Online Savings"
+    ],
+    "PNC" : [
+      "Virtual Wallet",
+      "Virtual Wallet with Performance Spend",
+      "Virtual Wallet with Performance Select",
+      "Standard Checking"
+    ],
+    "SoFi" : [
+      "SoFi Checking and Savings"
+    ],
+    "Synchrony" : [
+      "High Yield Savings",
+      "Money Market Account"
+    ],
+    "TD Bank" : [
+      "TD Complete Checking",
+      "TD Beyond Checking",
+      "TD Convenience Checking",
+      "TD Signature Savings"
+    ],
+    "Truist" : [
+      "Truist One Checking",
+      "Truist Confidence Account"
+    ],
+    "U.S. Bank" : [
+      "Bank Smartly Checking",
+      "Safe Debit Account",
+      "Silver Business Checking"
+    ],
+    "USAA" : [
+      "USAA Classic Checking",
+      "USAA Performance First Savings"
+    ],
+    "Wells Fargo" : [
+      "Everyday Checking",
+      "Clear Access Banking",
+      "Prime Checking",
+      "Premier Checking",
+      "Way2Save Savings",
+      "Initiate Business Checking"
+    ]
+  },
+  "brokerages" : [
+    "Ally Invest",
+    "Charles Schwab",
+    "E*TRADE",
+    "Fidelity",
+    "Firstrade",
+    "Interactive Brokers",
+    "J.P. Morgan Self-Directed Investing",
+    "M1 Finance",
+    "Merrill Edge",
+    "Moomoo",
+    "Public",
+    "Robinhood",
+    "SoFi Invest",
+    "Tastytrade",
+    "Tradier",
+    "Vanguard",
+    "Webull"
   ],
-  "productFamilies": [
+  "issuers" : [
+    "American Express",
+    "Bank of America",
+    "Barclays",
+    "Bilt",
+    "Capital One",
+    "Chase",
+    "Citi",
+    "Comenity",
+    "Discover",
+    "Fifth Third",
+    "First National Bank of Omaha",
+    "Goldman Sachs",
+    "HSBC",
+    "Navy Federal Credit Union",
+    "PNC",
+    "PenFed",
+    "SoFi",
+    "Synchrony",
+    "TD Bank",
+    "Truist",
+    "U.S. Bank",
+    "USAA",
+    "Wells Fargo"
+  ],
+  "productFamilies" : [
     {
-      "id": "chase.sapphire",
-      "issuer": "Chase",
-      "name": "Chase Sapphire",
-      "members": [
+      "confidence" : "wellEstablished",
+      "id" : "chase.sapphire",
+      "isBusiness" : false,
+      "issuer" : "Chase",
+      "lastVerified" : "2026-08-16",
+      "members" : [
         "Sapphire Preferred",
         "Sapphire Reserve"
       ],
-      "isBusiness": false
+      "name" : "Chase Sapphire",
+      "sourceNote" : "Chase treats Preferred and Reserve as one Sapphire bonus; long-standing and widely reported."
     },
     {
-      "id": "chase.freedom",
-      "issuer": "Chase",
-      "name": "Chase Freedom",
-      "members": [
+      "confidence" : "observed",
+      "id" : "chase.freedom",
+      "isBusiness" : false,
+      "issuer" : "Chase",
+      "lastVerified" : "2026-08-16",
+      "members" : [
         "Freedom Flex",
         "Freedom Unlimited",
         "Freedom Rise"
       ],
-      "isBusiness": false
+      "name" : "Chase Freedom",
+      "sourceNote" : "Freedom Flex/Unlimited/Rise bonuses are separate in practice, grouped here for the 48-month Chase clock."
     },
     {
-      "id": "chase.ink",
-      "issuer": "Chase",
-      "name": "Chase Ink",
-      "members": [
+      "confidence" : "observed",
+      "id" : "chase.ink",
+      "isBusiness" : true,
+      "issuer" : "Chase",
+      "lastVerified" : "2026-08-16",
+      "members" : [
         "Ink Business Cash",
         "Ink Business Unlimited",
         "Ink Business Preferred",
         "Ink Business Premier"
       ],
-      "isBusiness": true
+      "name" : "Chase Ink",
+      "sourceNote" : "Ink cards carry separate bonuses but share Chase's business-card velocity behaviour."
     },
     {
-      "id": "amex.gold",
-      "issuer": "American Express",
-      "name": "Amex Gold",
-      "members": [
+      "confidence" : "wellEstablished",
+      "id" : "amex.gold",
+      "isBusiness" : false,
+      "issuer" : "American Express",
+      "lastVerified" : "2026-08-16",
+      "members" : [
         "American Express Gold Card",
         "Gold Card"
       ],
-      "isBusiness": false
+      "name" : "Amex Gold",
+      "sourceNote" : "Amex welcome offers are once per lifetime per product; personal Gold is its own lifetime."
     },
     {
-      "id": "amex.gold.business",
-      "issuer": "American Express",
-      "name": "Amex Business Gold",
-      "members": [
+      "confidence" : "wellEstablished",
+      "id" : "amex.gold.business",
+      "isBusiness" : true,
+      "issuer" : "American Express",
+      "lastVerified" : "2026-08-16",
+      "members" : [
         "American Express Business Gold Card",
         "Business Gold"
       ],
-      "isBusiness": true
+      "name" : "Amex Business Gold",
+      "sourceNote" : "Business Gold is a separate lifetime from personal Gold."
     },
     {
-      "id": "amex.platinum",
-      "issuer": "American Express",
-      "name": "Amex Platinum",
-      "members": [
+      "confidence" : "wellEstablished",
+      "id" : "amex.platinum",
+      "isBusiness" : false,
+      "issuer" : "American Express",
+      "lastVerified" : "2026-08-16",
+      "members" : [
         "The Platinum Card",
         "Platinum Card"
       ],
-      "isBusiness": false
+      "name" : "Amex Platinum",
+      "sourceNote" : "Personal Platinum, once per lifetime."
     },
     {
-      "id": "amex.platinum.business",
-      "issuer": "American Express",
-      "name": "Amex Business Platinum",
-      "members": [
+      "confidence" : "wellEstablished",
+      "id" : "amex.platinum.business",
+      "isBusiness" : true,
+      "issuer" : "American Express",
+      "lastVerified" : "2026-08-16",
+      "members" : [
         "The Business Platinum Card",
         "Business Platinum"
       ],
-      "isBusiness": true
+      "name" : "Amex Business Platinum",
+      "sourceNote" : "Business Platinum is a separate lifetime from personal Platinum."
     },
     {
-      "id": "citi.strata",
-      "issuer": "Citi",
-      "name": "Citi Strata",
-      "members": [
+      "confidence" : "observed",
+      "id" : "citi.strata",
+      "isBusiness" : false,
+      "issuer" : "Citi",
+      "lastVerified" : "2026-08-16",
+      "members" : [
         "Strata Premier",
         "Strata Elite",
         "Premier"
       ],
-      "isBusiness": false
+      "name" : "Citi Strata",
+      "sourceNote" : "Citi's 48-month clock runs by product family; Strata line grouped with the former Premier."
     },
     {
-      "id": "citi.double-cash",
-      "issuer": "Citi",
-      "name": "Citi Double Cash",
-      "members": [
+      "confidence" : "observed",
+      "id" : "citi.double-cash",
+      "isBusiness" : false,
+      "issuer" : "Citi",
+      "lastVerified" : "2026-08-16",
+      "members" : [
         "Double Cash"
       ],
-      "isBusiness": false
+      "name" : "Citi Double Cash",
+      "sourceNote" : "Double Cash sits in Citi's ThankYou family for cooldown purposes."
     },
     {
-      "id": "capitalone.venture",
-      "issuer": "Capital One",
-      "name": "Capital One Venture",
-      "members": [
+      "confidence" : "observed",
+      "id" : "capitalone.venture",
+      "isBusiness" : false,
+      "issuer" : "Capital One",
+      "lastVerified" : "2026-08-16",
+      "members" : [
         "Venture Rewards",
         "Venture",
         "Venture X",
         "VentureOne"
       ],
-      "isBusiness": false
+      "name" : "Capital One Venture",
+      "sourceNote" : "Venture line grouped; Capital One's bonus rules are less publicly consistent than Chase's or Amex's."
     },
     {
-      "id": "bofa.premium-rewards",
-      "issuer": "Bank of America",
-      "name": "BofA Premium Rewards",
-      "members": [
+      "confidence" : "observed",
+      "id" : "bofa.premium-rewards",
+      "isBusiness" : false,
+      "issuer" : "Bank of America",
+      "lastVerified" : "2026-08-16",
+      "members" : [
         "Premium Rewards",
         "Premium Rewards Elite"
       ],
-      "isBusiness": false
+      "name" : "BofA Premium Rewards",
+      "sourceNote" : "Premium Rewards and Premium Rewards Elite are the same line; BofA's cooldown is per product."
+    },
+    {
+      "confidence" : "observed",
+      "id" : "chase.southwest",
+      "isBusiness" : false,
+      "issuer" : "Chase",
+      "lastVerified" : "2026-08-19",
+      "members" : [
+        "Southwest Rapid Rewards Plus",
+        "Southwest Rapid Rewards Premier",
+        "Southwest Rapid Rewards Priority"
+      ],
+      "name" : "Southwest Rapid Rewards",
+      "sourceNote" : "Grouped deliberately: these cards are reported to share one bonus clock. Southwest personal cards are widely reported as one bonus per 24 months across the line. Highest-value grouping here and the one most worth verifying first."
+    },
+    {
+      "confidence" : "wellEstablished",
+      "id" : "amex.green",
+      "isBusiness" : false,
+      "issuer" : "American Express",
+      "lastVerified" : "2026-08-19",
+      "members" : [
+        "American Express Green Card",
+        "Green Card"
+      ],
+      "name" : "Amex Green",
+      "sourceNote" : "One product, one family. Listed so the name is canonical and any per-product rule has something to attach to. Amex welcome offers are once per lifetime per product."
+    },
+    {
+      "confidence" : "observed",
+      "id" : "amex.blue-cash-preferred",
+      "isBusiness" : false,
+      "issuer" : "American Express",
+      "lastVerified" : "2026-08-19",
+      "members" : [
+        "Blue Cash Preferred"
+      ],
+      "name" : "Blue Cash Preferred",
+      "sourceNote" : "One product, one family. Listed so the name is canonical and any per-product rule has something to attach to."
+    },
+    {
+      "confidence" : "observed",
+      "id" : "amex.blue-cash-everyday",
+      "isBusiness" : false,
+      "issuer" : "American Express",
+      "lastVerified" : "2026-08-19",
+      "members" : [
+        "Blue Cash Everyday"
+      ],
+      "name" : "Blue Cash Everyday",
+      "sourceNote" : "One product, one family. Listed so the name is canonical and any per-product rule has something to attach to."
+    },
+    {
+      "confidence" : "observed",
+      "id" : "amex.delta-gold",
+      "isBusiness" : false,
+      "issuer" : "American Express",
+      "lastVerified" : "2026-08-19",
+      "members" : [
+        "Delta SkyMiles Gold"
+      ],
+      "name" : "Delta SkyMiles Gold",
+      "sourceNote" : "One product, one family. Listed so the name is canonical and any per-product rule has something to attach to."
+    },
+    {
+      "confidence" : "observed",
+      "id" : "amex.delta-platinum",
+      "isBusiness" : false,
+      "issuer" : "American Express",
+      "lastVerified" : "2026-08-19",
+      "members" : [
+        "Delta SkyMiles Platinum"
+      ],
+      "name" : "Delta SkyMiles Platinum",
+      "sourceNote" : "One product, one family. Listed so the name is canonical and any per-product rule has something to attach to."
+    },
+    {
+      "confidence" : "observed",
+      "id" : "amex.delta-reserve",
+      "isBusiness" : false,
+      "issuer" : "American Express",
+      "lastVerified" : "2026-08-19",
+      "members" : [
+        "Delta SkyMiles Reserve"
+      ],
+      "name" : "Delta SkyMiles Reserve",
+      "sourceNote" : "One product, one family. Listed so the name is canonical and any per-product rule has something to attach to."
+    },
+    {
+      "confidence" : "observed",
+      "id" : "amex.delta-blue",
+      "isBusiness" : false,
+      "issuer" : "American Express",
+      "lastVerified" : "2026-08-19",
+      "members" : [
+        "Delta SkyMiles Blue"
+      ],
+      "name" : "Delta SkyMiles Blue",
+      "sourceNote" : "One product, one family. Listed so the name is canonical and any per-product rule has something to attach to."
+    },
+    {
+      "confidence" : "observed",
+      "id" : "amex.hilton",
+      "isBusiness" : false,
+      "issuer" : "American Express",
+      "lastVerified" : "2026-08-19",
+      "members" : [
+        "Hilton Honors"
+      ],
+      "name" : "Hilton Honors",
+      "sourceNote" : "One product, one family. Listed so the name is canonical and any per-product rule has something to attach to."
+    },
+    {
+      "confidence" : "observed",
+      "id" : "amex.hilton-surpass",
+      "isBusiness" : false,
+      "issuer" : "American Express",
+      "lastVerified" : "2026-08-19",
+      "members" : [
+        "Hilton Honors Surpass"
+      ],
+      "name" : "Hilton Honors Surpass",
+      "sourceNote" : "One product, one family. Listed so the name is canonical and any per-product rule has something to attach to."
+    },
+    {
+      "confidence" : "observed",
+      "id" : "amex.hilton-aspire",
+      "isBusiness" : false,
+      "issuer" : "American Express",
+      "lastVerified" : "2026-08-19",
+      "members" : [
+        "Hilton Honors Aspire"
+      ],
+      "name" : "Hilton Honors Aspire",
+      "sourceNote" : "One product, one family. Listed so the name is canonical and any per-product rule has something to attach to."
+    },
+    {
+      "confidence" : "contested",
+      "id" : "amex.marriott-brilliant",
+      "isBusiness" : false,
+      "issuer" : "American Express",
+      "lastVerified" : "2026-08-19",
+      "members" : [
+        "Marriott Bonvoy Brilliant"
+      ],
+      "name" : "Marriott Bonvoy Brilliant",
+      "sourceNote" : "One product, one family. Listed so the name is canonical and any per-product rule has something to attach to. Marriott eligibility spans Chase and Amex and has changed repeatedly — do not attach a cross-issuer rule without a fresh check."
+    },
+    {
+      "confidence" : "contested",
+      "id" : "amex.marriott-bevy",
+      "isBusiness" : false,
+      "issuer" : "American Express",
+      "lastVerified" : "2026-08-19",
+      "members" : [
+        "Marriott Bonvoy Bevy"
+      ],
+      "name" : "Marriott Bonvoy Bevy",
+      "sourceNote" : "One product, one family. Listed so the name is canonical and any per-product rule has something to attach to."
+    },
+    {
+      "confidence" : "observed",
+      "id" : "chase.united-explorer",
+      "isBusiness" : false,
+      "issuer" : "Chase",
+      "lastVerified" : "2026-08-19",
+      "members" : [
+        "United Explorer"
+      ],
+      "name" : "United Explorer",
+      "sourceNote" : "One product, one family. Listed so the name is canonical and any per-product rule has something to attach to."
+    },
+    {
+      "confidence" : "observed",
+      "id" : "chase.united-quest",
+      "isBusiness" : false,
+      "issuer" : "Chase",
+      "lastVerified" : "2026-08-19",
+      "members" : [
+        "United Quest"
+      ],
+      "name" : "United Quest",
+      "sourceNote" : "One product, one family. Listed so the name is canonical and any per-product rule has something to attach to."
+    },
+    {
+      "confidence" : "observed",
+      "id" : "chase.united-club",
+      "isBusiness" : false,
+      "issuer" : "Chase",
+      "lastVerified" : "2026-08-19",
+      "members" : [
+        "United Club Infinite"
+      ],
+      "name" : "United Club Infinite",
+      "sourceNote" : "One product, one family. Listed so the name is canonical and any per-product rule has something to attach to."
+    },
+    {
+      "confidence" : "observed",
+      "id" : "chase.united-gateway",
+      "isBusiness" : false,
+      "issuer" : "Chase",
+      "lastVerified" : "2026-08-19",
+      "members" : [
+        "United Gateway"
+      ],
+      "name" : "United Gateway",
+      "sourceNote" : "One product, one family. Listed so the name is canonical and any per-product rule has something to attach to."
+    },
+    {
+      "confidence" : "observed",
+      "id" : "chase.southwest-performance",
+      "isBusiness" : true,
+      "issuer" : "Chase",
+      "lastVerified" : "2026-08-19",
+      "members" : [
+        "Southwest Rapid Rewards Performance Business"
+      ],
+      "name" : "Southwest Performance Business",
+      "sourceNote" : "One product, one family. Listed so the name is canonical and any per-product rule has something to attach to."
+    },
+    {
+      "confidence" : "observed",
+      "id" : "chase.southwest-premier-business",
+      "isBusiness" : true,
+      "issuer" : "Chase",
+      "lastVerified" : "2026-08-19",
+      "members" : [
+        "Southwest Rapid Rewards Premier Business"
+      ],
+      "name" : "Southwest Premier Business",
+      "sourceNote" : "One product, one family. Listed so the name is canonical and any per-product rule has something to attach to."
+    },
+    {
+      "confidence" : "observed",
+      "id" : "usbank.altitude-go",
+      "isBusiness" : false,
+      "issuer" : "U.S. Bank",
+      "lastVerified" : "2026-08-19",
+      "members" : [
+        "Altitude Go"
+      ],
+      "name" : "Altitude Go",
+      "sourceNote" : "One product, one family. Listed so the name is canonical and any per-product rule has something to attach to."
+    },
+    {
+      "confidence" : "observed",
+      "id" : "usbank.altitude-connect",
+      "isBusiness" : false,
+      "issuer" : "U.S. Bank",
+      "lastVerified" : "2026-08-19",
+      "members" : [
+        "Altitude Connect"
+      ],
+      "name" : "Altitude Connect",
+      "sourceNote" : "One product, one family. Listed so the name is canonical and any per-product rule has something to attach to."
+    },
+    {
+      "confidence" : "observed",
+      "id" : "usbank.altitude-reserve",
+      "isBusiness" : false,
+      "issuer" : "U.S. Bank",
+      "lastVerified" : "2026-08-19",
+      "members" : [
+        "Altitude Reserve"
+      ],
+      "name" : "Altitude Reserve",
+      "sourceNote" : "One product, one family. Listed so the name is canonical and any per-product rule has something to attach to."
+    },
+    {
+      "confidence" : "observed",
+      "id" : "usbank.cash-plus",
+      "isBusiness" : false,
+      "issuer" : "U.S. Bank",
+      "lastVerified" : "2026-08-19",
+      "members" : [
+        "Cash+"
+      ],
+      "name" : "Cash+",
+      "sourceNote" : "One product, one family. Listed so the name is canonical and any per-product rule has something to attach to."
+    },
+    {
+      "confidence" : "observed",
+      "id" : "usbank.shopper",
+      "isBusiness" : false,
+      "issuer" : "U.S. Bank",
+      "lastVerified" : "2026-08-19",
+      "members" : [
+        "Shopper Cash Rewards"
+      ],
+      "name" : "Shopper Cash Rewards",
+      "sourceNote" : "One product, one family. Listed so the name is canonical and any per-product rule has something to attach to."
+    },
+    {
+      "confidence" : "observed",
+      "id" : "barclays.aviator-red",
+      "isBusiness" : false,
+      "issuer" : "Barclays",
+      "lastVerified" : "2026-08-19",
+      "members" : [
+        "AAdvantage Aviator Red"
+      ],
+      "name" : "AAdvantage Aviator Red",
+      "sourceNote" : "One product, one family. Listed so the name is canonical and any per-product rule has something to attach to."
+    },
+    {
+      "confidence" : "observed",
+      "id" : "barclays.aviator-business",
+      "isBusiness" : true,
+      "issuer" : "Barclays",
+      "lastVerified" : "2026-08-19",
+      "members" : [
+        "AAdvantage Aviator Business"
+      ],
+      "name" : "AAdvantage Aviator Business",
+      "sourceNote" : "One product, one family. Listed so the name is canonical and any per-product rule has something to attach to."
+    },
+    {
+      "confidence" : "observed",
+      "id" : "barclays.jetblue",
+      "isBusiness" : false,
+      "issuer" : "Barclays",
+      "lastVerified" : "2026-08-19",
+      "members" : [
+        "JetBlue"
+      ],
+      "name" : "JetBlue",
+      "sourceNote" : "One product, one family. Listed so the name is canonical and any per-product rule has something to attach to."
+    },
+    {
+      "confidence" : "observed",
+      "id" : "barclays.jetblue-plus",
+      "isBusiness" : false,
+      "issuer" : "Barclays",
+      "lastVerified" : "2026-08-19",
+      "members" : [
+        "JetBlue Plus"
+      ],
+      "name" : "JetBlue Plus",
+      "sourceNote" : "One product, one family. Listed so the name is canonical and any per-product rule has something to attach to."
     }
-  ]
+  ],
+  "products" : {
+    "American Express" : [
+      "American Express Gold Card",
+      "American Express Green Card",
+      "The Platinum Card",
+      "Blue Cash Preferred",
+      "Blue Cash Everyday",
+      "Delta SkyMiles Blue",
+      "Delta SkyMiles Gold",
+      "Delta SkyMiles Platinum",
+      "Delta SkyMiles Reserve",
+      "Hilton Honors",
+      "Hilton Honors Surpass",
+      "Hilton Honors Aspire",
+      "Marriott Bonvoy Brilliant",
+      "Marriott Bonvoy Bevy",
+      "American Express Business Gold Card",
+      "The Business Platinum Card",
+      "Blue Business Cash",
+      "Blue Business Plus"
+    ],
+    "Bank of America" : [
+      "Premium Rewards",
+      "Premium Rewards Elite",
+      "Customized Cash Rewards",
+      "Unlimited Cash Rewards",
+      "Travel Rewards",
+      "Alaska Airlines Visa"
+    ],
+    "Barclays" : [
+      "AAdvantage Aviator Red",
+      "AAdvantage Aviator Business",
+      "JetBlue",
+      "JetBlue Plus",
+      "Hawaiian Airlines World Elite",
+      "Wyndham Rewards Earner",
+      "Frontier Airlines World"
+    ],
+    "Bilt" : [
+      "Bilt Mastercard"
+    ],
+    "Capital One" : [
+      "Venture Rewards",
+      "Venture X",
+      "VentureOne",
+      "Savor",
+      "Quicksilver",
+      "Spark Cash Plus",
+      "Spark Miles",
+      "Venture X Business"
+    ],
+    "Chase" : [
+      "Sapphire Preferred",
+      "Sapphire Reserve",
+      "Freedom Flex",
+      "Freedom Unlimited",
+      "Freedom Rise",
+      "Ink Business Cash",
+      "Ink Business Unlimited",
+      "Ink Business Preferred",
+      "Ink Business Premier",
+      "United Explorer",
+      "United Quest",
+      "United Club Infinite",
+      "United Gateway",
+      "United Business",
+      "Southwest Rapid Rewards Plus",
+      "Southwest Rapid Rewards Premier",
+      "Southwest Rapid Rewards Priority",
+      "Southwest Rapid Rewards Performance Business",
+      "Marriott Bonvoy Boundless",
+      "Marriott Bonvoy Bold",
+      "IHG One Rewards Premier",
+      "World of Hyatt",
+      "Aeroplan"
+    ],
+    "Citi" : [
+      "Strata Premier",
+      "Strata Elite",
+      "Double Cash",
+      "Custom Cash",
+      "Rewards+",
+      "AAdvantage Platinum Select",
+      "AAdvantage Executive",
+      "Costco Anywhere Visa"
+    ],
+    "Discover" : [
+      "Discover it Cash Back",
+      "Discover it Miles",
+      "Discover it Chrome",
+      "Discover it Student Cash Back",
+      "Discover it Secured"
+    ],
+    "Goldman Sachs" : [
+      "Apple Card"
+    ],
+    "Navy Federal Credit Union" : [
+      "cashRewards",
+      "More Rewards American Express",
+      "Flagship Rewards",
+      "GO Rewards"
+    ],
+    "PenFed" : [
+      "Power Cash Rewards",
+      "Platinum Rewards",
+      "Pathfinder Rewards"
+    ],
+    "SoFi" : [
+      "SoFi Credit Card"
+    ],
+    "Synchrony" : [
+      "Amazon Store Card",
+      "PayPal Cashback Mastercard",
+      "Venmo Credit Card"
+    ],
+    "TD Bank" : [
+      "TD Double Up",
+      "TD Cash Credit Card"
+    ],
+    "U.S. Bank" : [
+      "Altitude Go",
+      "Altitude Connect",
+      "Altitude Reserve",
+      "Cash+",
+      "Shopper Cash Rewards",
+      "Business Triple Cash Rewards"
+    ],
+    "USAA" : [
+      "USAA Rewards Visa Signature",
+      "USAA Cashback Rewards Plus"
+    ],
+    "Wells Fargo" : [
+      "Active Cash",
+      "Autograph",
+      "Autograph Journey",
+      "Attune",
+      "Signify Business Cash",
+      "Choice Privileges Select"
+    ]
+  },
+  "revision" : 6,
+  "rules" : [
+    {
+      "appliesTo" : "both",
+      "confidence" : "wellEstablished",
+      "countsAuthorizedUser" : true,
+      "countsBusinessCards" : false,
+      "explanation" : "Chase declines almost every application once you've opened 5 or more personal cards at any issuer in the last 24 months. Business cards from most issuers don't count because they don't report to personal bureaus — but Capital One, Discover and TD business cards do.",
+      "id" : "chase.5-24",
+      "issuer" : "Chase",
+      "kind" : "velocityAnyIssuer",
+      "lastVerified" : "2026-08-12",
+      "name" : "5/24",
+      "sourceNote" : "Thousands of consistent community datapoints over a decade. Authorized-user cards count, though they can sometimes be argued off on reconsideration.",
+      "threshold" : 5,
+      "windowMonths" : 24
+    },
+    {
+      "appliesTo" : "both",
+      "confidence" : "observed",
+      "countsAuthorizedUser" : false,
+      "countsBusinessCards" : true,
+      "explanation" : "Chase rarely approves more than two of its own cards in any 30-day period.",
+      "id" : "chase.2-30",
+      "issuer" : "Chase",
+      "kind" : "velocityThisIssuer",
+      "lastVerified" : "2026-08-12",
+      "name" : "2/30",
+      "sourceNote" : "Consistent pattern with a meaningful exception rate.",
+      "threshold" : 2,
+      "windowMonths" : 1
+    },
+    {
+      "appliesTo" : "personal",
+      "confidence" : "wellEstablished",
+      "countsAuthorizedUser" : false,
+      "countsBusinessCards" : false,
+      "explanation" : "No new welcome bonus on a Chase product if you received one on that product in the past 48 months. The Sapphire family shares a single bonus across Preferred and Reserve.",
+      "id" : "chase.48-month",
+      "issuer" : "Chase",
+      "kind" : "productFamilyCooldown",
+      "lastVerified" : "2026-08-12",
+      "name" : "48-month rule",
+      "sourceNote" : "Stated in Chase offer terms for the Sapphire family; well-established elsewhere.",
+      "windowMonths" : 48
+    },
+    {
+      "appliesTo" : "both",
+      "confidence" : "published",
+      "countsAuthorizedUser" : false,
+      "countsBusinessCards" : false,
+      "explanation" : "One welcome bonus per card product, ever. Amex offer terms use \"have or have had\" language. Personal and business versions of a card are separate products with separate lifetimes.",
+      "id" : "amex.once-per-lifetime",
+      "issuer" : "American Express",
+      "kind" : "oncePerLifetime",
+      "lastVerified" : "2026-08-12",
+      "name" : "Once per lifetime",
+      "sourceNote" : "Stated in Amex offer terms. The single most consequential rule in the hobby — an accidental re-application burns the bonus permanently."
+    },
+    {
+      "appliesTo" : "both",
+      "confidence" : "wellEstablished",
+      "countsAuthorizedUser" : false,
+      "countsBusinessCards" : true,
+      "explanation" : "No more than two Amex credit cards approved in any 90 days.",
+      "id" : "amex.2-90",
+      "issuer" : "American Express",
+      "kind" : "velocityThisIssuer",
+      "lastVerified" : "2026-08-12",
+      "name" : "2/90",
+      "sourceNote" : "Long-standing community consensus.",
+      "threshold" : 2,
+      "windowMonths" : 3
+    },
+    {
+      "appliesTo" : "both",
+      "confidence" : "observed",
+      "countsAuthorizedUser" : false,
+      "countsBusinessCards" : true,
+      "explanation" : "Amex generally caps you at about five open credit cards at once. Charge cards are counted separately, with a higher limit.",
+      "id" : "amex.credit-card-limit",
+      "issuer" : "American Express",
+      "kind" : "openAccountLimit",
+      "lastVerified" : "2026-08-12",
+      "name" : "5 credit card limit",
+      "sourceNote" : "Widely reported; the exact cap varies by relationship.",
+      "threshold" : 5
+    },
+    {
+      "appliesTo" : "personal",
+      "confidence" : "wellEstablished",
+      "countsAuthorizedUser" : false,
+      "countsBusinessCards" : false,
+      "explanation" : "No more than one Citi card approved in any 8 days.",
+      "id" : "citi.1-8",
+      "issuer" : "Citi",
+      "kind" : "velocityThisIssuer",
+      "lastVerified" : "2026-08-12",
+      "name" : "1/8",
+      "sourceNote" : "Long-standing community consensus. Modelled here as a one-month window, which is more conservative than the true 8 days.",
+      "threshold" : 1,
+      "windowMonths" : 1
+    },
+    {
+      "appliesTo" : "personal",
+      "confidence" : "wellEstablished",
+      "countsAuthorizedUser" : false,
+      "countsBusinessCards" : false,
+      "explanation" : "No more than two Citi cards approved in any 65 days.",
+      "id" : "citi.2-65",
+      "issuer" : "Citi",
+      "kind" : "velocityThisIssuer",
+      "lastVerified" : "2026-08-12",
+      "name" : "2/65",
+      "sourceNote" : "Long-standing community consensus.",
+      "threshold" : 2,
+      "windowMonths" : 2
+    },
+    {
+      "appliesTo" : "both",
+      "confidence" : "wellEstablished",
+      "countsAuthorizedUser" : false,
+      "countsBusinessCards" : false,
+      "explanation" : "No bonus if you opened OR CLOSED a card in the same Citi family in the past 48 months. Closing counts, which trips people constantly — tidying up an old card restarts the clock.",
+      "id" : "citi.48-month-family",
+      "issuer" : "Citi",
+      "kind" : "productFamilyCooldown",
+      "lastVerified" : "2026-08-12",
+      "name" : "48-month family rule",
+      "sourceNote" : "Stated in Citi offer terms for several families; well-established across the rest.",
+      "windowMonths" : 48
+    },
+    {
+      "appliesTo" : "personal",
+      "confidence" : "observed",
+      "countsAuthorizedUser" : false,
+      "countsBusinessCards" : false,
+      "explanation" : "Capital One generally approves about one personal card every six months.",
+      "id" : "capitalone.1-6",
+      "issuer" : "Capital One",
+      "kind" : "velocityThisIssuer",
+      "lastVerified" : "2026-08-12",
+      "name" : "1/6",
+      "sourceNote" : "Consistent pattern with a meaningful exception rate. Capital One also pulls all three credit bureaus, costing an inquiry on each.",
+      "threshold" : 1,
+      "windowMonths" : 6
+    },
+    {
+      "appliesTo" : "both",
+      "confidence" : "observed",
+      "countsAuthorizedUser" : false,
+      "countsBusinessCards" : true,
+      "explanation" : "No more than two Capital One applications in any 30 days.",
+      "id" : "capitalone.2-30",
+      "issuer" : "Capital One",
+      "kind" : "velocityThisIssuer",
+      "lastVerified" : "2026-08-12",
+      "name" : "2/30",
+      "sourceNote" : "Community-observed.",
+      "threshold" : 2,
+      "windowMonths" : 1
+    },
+    {
+      "appliesTo" : "personal",
+      "confidence" : "wellEstablished",
+      "countsAuthorizedUser" : false,
+      "countsBusinessCards" : false,
+      "explanation" : "Part of Bank of America's 2/3/4 rule: no more than 2 of its cards in 30 days, 3 in 12 months, or 4 in 24 months.",
+      "id" : "bofa.2-3-4",
+      "issuer" : "Bank of America",
+      "kind" : "velocityThisIssuer",
+      "lastVerified" : "2026-08-12",
+      "name" : "3/12",
+      "sourceNote" : "Well-established. Only the 12-month leg is modelled here; the 30-day and 24-month legs are tracked separately.",
+      "threshold" : 3,
+      "windowMonths" : 12
+    },
+    {
+      "appliesTo" : "personal",
+      "confidence" : "wellEstablished",
+      "countsAuthorizedUser" : false,
+      "countsBusinessCards" : false,
+      "explanation" : "The 24-month leg of Bank of America's 2/3/4 rule: no more than four of its cards in 24 months.",
+      "id" : "bofa.4-24",
+      "issuer" : "Bank of America",
+      "kind" : "velocityThisIssuer",
+      "lastVerified" : "2026-08-12",
+      "name" : "4/24 (own cards)",
+      "sourceNote" : "Well-established.",
+      "threshold" : 4,
+      "windowMonths" : 24
+    },
+    {
+      "appliesTo" : "personal",
+      "confidence" : "observed",
+      "countsAuthorizedUser" : true,
+      "countsBusinessCards" : false,
+      "explanation" : "Bank of America declines applicants with 7 or more new accounts at any issuer in the last 12 months. Preferred Rewards members are treated more leniently.",
+      "id" : "bofa.7-12",
+      "issuer" : "Bank of America",
+      "kind" : "velocityAnyIssuer",
+      "lastVerified" : "2026-08-12",
+      "name" : "7/12",
+      "sourceNote" : "Community-observed, with a meaningful exception rate for existing customers.",
+      "threshold" : 7,
+      "windowMonths" : 12
+    },
+    {
+      "appliesTo" : "personal",
+      "confidence" : "observed",
+      "countsAuthorizedUser" : true,
+      "countsBusinessCards" : false,
+      "explanation" : "Barclays is sensitive to 6 or more new accounts across all issuers in 24 months. There's no formal published rule — it behaves like a soft threshold rather than a hard cut-off.",
+      "id" : "barclays.6-24",
+      "issuer" : "Barclays",
+      "kind" : "velocityAnyIssuer",
+      "lastVerified" : "2026-08-12",
+      "name" : "6/24",
+      "sourceNote" : "Community-observed. Barclays is also notably inquiry-sensitive.",
+      "threshold" : 6,
+      "windowMonths" : 24
+    },
+    {
+      "appliesTo" : "personal",
+      "confidence" : "contested",
+      "countsAuthorizedUser" : false,
+      "countsBusinessCards" : false,
+      "explanation" : "U.S. Bank has no formal velocity rule, but declines correlate strongly with recent account and inquiry volume. Applicants with an existing banking relationship fare better.",
+      "id" : "usbank.velocity",
+      "issuer" : "U.S. Bank",
+      "kind" : "velocityAnyIssuer",
+      "lastVerified" : "2026-08-12",
+      "name" : "Inquiry sensitivity",
+      "sourceNote" : "Datapoints conflict. Treated as a caution, not a cut-off.",
+      "threshold" : 6,
+      "windowMonths" : 12
+    }
+  ],
+  "schemaVersion" : 1,
+  "updatedOn" : "2026-08-23"
 }
