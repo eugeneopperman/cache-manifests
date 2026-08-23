@@ -47,8 +47,9 @@
       "seenOn": "2026-08-23",
       "guessedInstitution": "Wells Fargo",
       "guessedValueCents": 50000,
-      "status": "new",
-      "note": "Lead only \u2014 nobody has read these terms. Open the issuer's own page before publishing."
+      "status": "published",
+      "note": "Verified against accountoffers.wellsfargo.com on 2026-08-23 and published as feed revision 5. The lead's own article body said $400; the issuer's offer page said $500. The issuer won.",
+      "feedOfferID": "wellsfargo.everyday-checking.500"
     },
     {
       "id": "0acf1783dd24b980",
@@ -63,7 +64,9 @@
       "note": "Lead only \u2014 nobody has read these terms. Open the issuer's own page before publishing."
     }
   ],
-  "dismissed": [],
+  "dismissed": [
+    "a7b452169807bc2e"
+  ],
   "pageHashes": {
     "chase-checking": "38f47fba69e5a17726655251cae42fb78f7c79853c01341e09b3c8a64c911119",
     "capitalone-checking": "38de587f823fd7263a07537c1285880fa0082f4b4953135f29fca2bc75fb95fb"
