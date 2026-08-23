@@ -198,9 +198,40 @@
       "title" : "Strata Premier",
       "valueCents" : 60000,
       "verifiedOn" : "2026-08-15"
+    },
+    {
+      "annualFeeCents" : null,
+      "category" : "bank",
+      "expiresOn" : "2026-10-06",
+      "id" : "wellsfargo.everyday-checking.500",
+      "institution" : "Wells Fargo",
+      "notes" : "Needs a bonus offer code — open from the offer page itself and it is applied automatically, or request the code by email to open in branch. The 90 days run from ACCOUNT OPENING. Qualifying electronic deposits, $1,000 total. Not available if you received a Wells Fargo consumer checking bonus in the past 12 months. $25 minimum opening deposit in branch. $15 monthly service fee, avoidable with $500+ in qualifying electronic deposits, a $1,500 minimum daily balance, $5,000 across deposit and investment balances, a qualifying military direct deposit, or a primary owner aged 17–24. Bonus pays within 30 days of meeting the requirement.",
+      "pointsAmount" : null,
+      "requirements" : [
+        {
+          "anchor" : "opened",
+          "isBlocking" : true,
+          "kind" : "directDeposit",
+          "label" : "Direct deposits totalling $1,000",
+          "perItemMinCents" : null,
+          "targetCents" : 100000,
+          "targetCount" : null,
+          "targetDays" : null,
+          "windowDays" : 90,
+          "windowMonths" : null
+        }
+      ],
+      "sourceURL" : "https://accountoffers.wellsfargo.com/offerbonus/",
+      "states" : [
+
+      ],
+      "summary" : "Open a new Everyday Checking account with a bonus offer code and receive qualifying direct deposits totalling $1,000 within 90 days of opening.",
+      "title" : "Everyday Checking",
+      "valueCents" : 50000,
+      "verifiedOn" : "2026-08-23"
     }
   ],
-  "revision" : 4,
+  "revision" : 5,
   "schemaVersion" : 1,
-  "updatedOn" : "2026-08-16"
+  "updatedOn" : "2026-08-23"
 }
