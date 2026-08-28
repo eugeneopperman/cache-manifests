@@ -1,5 +1,5 @@
 {
-  "_comment" : "RESEARCHED 2026-08-15, NOT YET CURATOR-VERIFIED. Terms for all six offers were read on the ISSUER'S OWN PAGE, and every sourceURL has been loaded and confirmed to resolve. That is deliberate policy, not incidental: an earlier revision carried plausible-looking URLs that had never been opened, and one of them 404'd, so 'Read the terms' sent the user nowhere. A sourceURL that has not been opened is not a source. Still NOT the curator sign-off PRD §16.3 requires before launch — treat this as a first pass to check, not as verified data. Three standing editorial rules. (1) verifiedOn is the date the source was actually read; where a term could only be found in a secondhand article, use that article's publication date instead, so the offer correctly renders as stale rather than looking freshly checked. (2) Targeted 'as high as' offers are excluded entirely — Amex's headline bonuses are not uniformly available, and stating one as a flat fact tells a user they can get something they may not (README rule 5). (3) Anchors are taken from the offer's own wording: Chase Total Checking runs its 90 days from OFFER ENROLLMENT, not account opening, which is why it uses the 'enrolled' anchor. Getting that wrong starts the countdown on the wrong day. Brokerage and freebie are EMPTY on purpose: nothing current enough was found, and a padded feed is worse than a short one. See PRD §6.8.",
+  "_comment" : "RESEARCHED 2026-08-15, with a seventh offer added 2026-08-23. NOT YET CURATOR-VERIFIED. Terms for all seven offers were read on the ISSUER'S OWN PAGE, and every sourceURL has been loaded and confirmed to resolve. That is deliberate policy, not incidental: an earlier revision carried plausible-looking URLs that had never been opened, and one of them 404'd, so 'Read the terms' sent the user nowhere. A sourceURL that has not been opened is not a source. Still NOT the curator sign-off PRD §16.3 requires before launch — treat this as a first pass to check, not as verified data. Three standing editorial rules. (1) verifiedOn is the date the source was actually read; where a term could only be found in a secondhand article, use that article's publication date instead, so the offer correctly renders as stale rather than looking freshly checked. (2) Targeted 'as high as' offers are excluded entirely — Amex's headline bonuses are not uniformly available, and stating one as a flat fact tells a user they can get something they may not (README rule 5). (3) Anchors are taken from the offer's own wording: Chase Total Checking runs its 90 days from OFFER ENROLLMENT, not account opening, which is why it uses the 'enrolled' anchor. Getting that wrong starts the countdown on the wrong day. Brokerage and freebie are EMPTY on purpose: nothing current enough was found, and a padded feed is worse than a short one. See PRD §6.8.",
   "offers" : [
     {
       "annualFeeCents" : null,
@@ -231,7 +231,7 @@
       "verifiedOn" : "2026-08-23"
     }
   ],
-  "revision" : 5,
+  "revision" : 6,
   "schemaVersion" : 1,
-  "updatedOn" : "2026-08-23"
+  "updatedOn" : "2026-08-28"
 }

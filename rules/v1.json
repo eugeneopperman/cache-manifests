@@ -1,5 +1,5 @@
 {
-  "_comment" : "Bundled fallback. The live copy is fetched from addsaltandco.com/cache/rules/v1.json. EVERY rule here is a community-observed pattern, not published issuer policy — see docs/research/domain-rules.md. Nothing has had a domain-expert pass yet; that is a blocking launch item.",
+  "_comment" : "Bundled fallback. The live copy is fetched from cdn.jsdelivr.net/gh/eugeneopperman/vest-manifests@main/rules/v1.json. EVERY rule here is a community-observed pattern, not published issuer policy — see docs/research/domain-rules.md. Nothing has had a domain-expert pass yet; that is a blocking launch item.",
   "bankProducts" : {
     "Bank of America" : [
       "Advantage Plus Banking",
@@ -116,6 +116,27 @@
     "Tastytrade",
     "Tradier",
     "Vanguard",
+    "Webull"
+  ],
+  "cryptoExchanges" : [
+    "Binance.US",
+    "Bitstamp",
+    "Cash App",
+    "Coinbase",
+    "Crypto.com",
+    "Gemini",
+    "Kraken",
+    "KuCoin",
+    "Ledn",
+    "Nexo",
+    "OKX",
+    "Public",
+    "River Financial",
+    "Robinhood",
+    "SoFi",
+    "Strike",
+    "Swan Bitcoin",
+    "Uphold",
     "Webull"
   ],
   "issuers" : [
@@ -772,7 +793,7 @@
       "Choice Privileges Select"
     ]
   },
-  "revision" : 6,
+  "revision" : 8,
   "rules" : [
     {
       "appliesTo" : "both",
@@ -1011,5 +1032,5 @@
     }
   ],
   "schemaVersion" : 1,
-  "updatedOn" : "2026-08-23"
+  "updatedOn" : "2026-08-28"
 }
