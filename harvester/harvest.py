@@ -446,7 +446,7 @@ def main() -> int:
     today = datetime.now(timezone.utc).date().isoformat()
 
     log: list[str] = []
-    fetcher = Fetcher(sources.get("userAgent", "CacheOfferHarvester/1"), log)
+    fetcher = Fetcher(sources.get("userAgent", "VestOfferHarvester/1"), log)
     result = harvest(sources, existing, fetcher, today, log)
 
     before = len(existing.get("candidates", []))

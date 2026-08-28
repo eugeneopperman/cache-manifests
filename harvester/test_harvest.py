@@ -198,7 +198,7 @@ class TestConfig(unittest.TestCase):
 
     def test_sources_json_is_valid_and_every_source_is_complete(self):
         config = json.loads((HERE / "sources.json").read_text())
-        self.assertTrue(config.get("userAgent", "").startswith("CacheOfferHarvester"))
+        self.assertTrue(config.get("userAgent", "").startswith("VestOfferHarvester"))
         self.assertNotIn("Mozilla", config["userAgent"], "the tool must not claim to be a browser")
         for source in config["sources"]:
             for field in ("id", "name", "kind", "url", "enabled"):

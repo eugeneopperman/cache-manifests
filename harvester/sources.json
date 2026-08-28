@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "userAgent": "CacheOfferHarvester/1 (+https://github.com/eugeneopperman/cache-manifests)",
+  "userAgent": "VestOfferHarvester/1 (+https://github.com/eugeneopperman/vest-manifests)",
   "sources": [
     {
       "id": "doctorofcredit",

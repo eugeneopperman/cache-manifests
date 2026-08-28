@@ -1,6 +1,6 @@
-# cache-manifests
+# vest-manifests
 
-The data Cache downloads. Two versioned static JSON documents, served straight from this repo by
+The data Vest downloads. Two versioned static JSON documents, served straight from this repo by
 jsDelivr. There is no server, no API and no account — publishing an offer is a commit, rolling one
 back is a revert, and the record of what was live on any given day is this repo's log.
 
@@ -12,8 +12,8 @@ rules/v1.json    issuer rules   — 5/24 and friends, behind the eligibility eng
 ## The URLs the app fetches
 
 ```
-https://cdn.jsdelivr.net/gh/eugeneopperman/cache-manifests@main/feed/v1.json
-https://cdn.jsdelivr.net/gh/eugeneopperman/cache-manifests@main/rules/v1.json
+https://cdn.jsdelivr.net/gh/eugeneopperman/vest-manifests@main/feed/v1.json
+https://cdn.jsdelivr.net/gh/eugeneopperman/vest-manifests@main/rules/v1.json
 ```
 
 Branch URLs, not tags, so a push is a publish. jsDelivr holds a branch URL for **up to 12 hours**,
@@ -24,7 +24,7 @@ which is why the publish script purges it — see below.
 Always from the app repo, never by editing files here directly:
 
 ```sh
-cd ../Tracker
+cd ../Vest-Churn-Tracker
 ./scripts/publish-manifests.sh feed      # or: rules, or: both
 ```
 
