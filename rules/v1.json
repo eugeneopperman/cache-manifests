@@ -793,10 +793,15 @@
       "Choice Privileges Select"
     ]
   },
-  "revision" : 9,
+  "revision" : 10,
   "rules" : [
     {
       "appliesTo" : "both",
+      "businessCardIssuersThatCount" : [
+        "Capital One",
+        "Discover",
+        "TD Bank"
+      ],
       "confidence" : "wellEstablished",
       "countsAuthorizedUser" : true,
       "countsBusinessCards" : false,
@@ -804,9 +809,9 @@
       "id" : "chase.5-24",
       "issuer" : "Chase",
       "kind" : "velocityAnyIssuer",
-      "lastVerified" : "2026-08-12",
+      "lastVerified" : "2026-08-29",
       "name" : "5/24",
-      "sourceNote" : "Thousands of consistent community datapoints over a decade. Authorized-user cards count, though they can sometimes be argued off on reconsideration.",
+      "sourceNote" : "Thousands of consistent community datapoints over a decade. Authorized-user cards count, though they can sometimes be argued off on reconsideration. Capital One, Discover and TD Bank business cards report to personal bureaus and are counted here; every other issuer's business cards are not.",
       "threshold" : 5,
       "windowMonths" : 24
     },
@@ -872,13 +877,14 @@
       "confidence" : "observed",
       "countsAuthorizedUser" : false,
       "countsBusinessCards" : true,
+      "countsChargeCards" : false,
       "explanation" : "Amex generally caps you at about five open credit cards at once. Charge cards are counted separately, with a higher limit.",
       "id" : "amex.credit-card-limit",
       "issuer" : "American Express",
       "kind" : "openAccountLimit",
-      "lastVerified" : "2026-08-12",
+      "lastVerified" : "2026-08-29",
       "name" : "5 credit card limit",
-      "sourceNote" : "Widely reported; the exact cap varies by relationship.",
+      "sourceNote" : "Widely reported; the exact cap varies by relationship. Charge cards are excluded from this count, which is what this rule has always said and what Vest did not do until 2026-08-29. Mark a card as a charge card for it to hold.",
       "threshold" : 5
     },
     {
@@ -1010,9 +1016,10 @@
       "id" : "barclays.6-24",
       "issuer" : "Barclays",
       "kind" : "velocityAnyIssuer",
-      "lastVerified" : "2026-08-12",
+      "lastVerified" : "2026-08-29",
       "name" : "6/24",
-      "sourceNote" : "Community-observed. Barclays is also notably inquiry-sensitive.",
+      "severity" : "caution",
+      "sourceNote" : "Community-observed. Barclays is also notably inquiry-sensitive. Carried as a caution rather than a block, which is what the explanation has always described: no datapoint supports reporting this count as a decline.",
       "threshold" : 6,
       "windowMonths" : 24
     },
@@ -1025,9 +1032,10 @@
       "id" : "usbank.velocity",
       "issuer" : "U.S. Bank",
       "kind" : "velocityAnyIssuer",
-      "lastVerified" : "2026-08-12",
+      "lastVerified" : "2026-08-29",
       "name" : "Inquiry sensitivity",
-      "sourceNote" : "Datapoints conflict. Treated as a caution, not a cut-off.",
+      "severity" : "caution",
+      "sourceNote" : "Datapoints conflict. Treated as a caution, not a cut-off — and as of 2026-08-29 the engine treats it that way too, rather than only saying so here.",
       "threshold" : 6,
       "windowMonths" : 12
     }
