@@ -793,7 +793,7 @@
       "Choice Privileges Select"
     ]
   },
-  "revision" : 11,
+  "revision" : 12,
   "rules" : [
     {
       "appliesTo" : "both",
