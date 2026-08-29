@@ -793,7 +793,7 @@
       "Choice Privileges Select"
     ]
   },
-  "revision" : 8,
+  "revision" : 9,
   "rules" : [
     {
       "appliesTo" : "both",
@@ -823,7 +823,7 @@
       "name" : "2/30",
       "sourceNote" : "Consistent pattern with a meaningful exception rate.",
       "threshold" : 2,
-      "windowMonths" : 1
+      "windowDays" : 30
     },
     {
       "appliesTo" : "personal",
@@ -865,7 +865,7 @@
       "name" : "2/90",
       "sourceNote" : "Long-standing community consensus.",
       "threshold" : 2,
-      "windowMonths" : 3
+      "windowDays" : 90
     },
     {
       "appliesTo" : "both",
@@ -907,13 +907,14 @@
       "kind" : "velocityThisIssuer",
       "lastVerified" : "2026-08-12",
       "name" : "2/65",
-      "sourceNote" : "Long-standing community consensus.",
+      "sourceNote" : "Long-standing community consensus. Modelled in days rather than months: two calendar months span 59-62 days, always short of 65, and short in the direction that reports someone clear when Citi would not.",
       "threshold" : 2,
-      "windowMonths" : 2
+      "windowDays" : 65
     },
     {
       "appliesTo" : "both",
       "confidence" : "wellEstablished",
+      "cooldownCountsClosure" : true,
       "countsAuthorizedUser" : false,
       "countsBusinessCards" : false,
       "explanation" : "No bonus if you opened OR CLOSED a card in the same Citi family in the past 48 months. Closing counts, which trips people constantly — tidying up an old card restarts the clock.",
@@ -953,7 +954,7 @@
       "name" : "2/30",
       "sourceNote" : "Community-observed.",
       "threshold" : 2,
-      "windowMonths" : 1
+      "windowDays" : 30
     },
     {
       "appliesTo" : "personal",
@@ -966,7 +967,7 @@
       "kind" : "velocityThisIssuer",
       "lastVerified" : "2026-08-12",
       "name" : "3/12",
-      "sourceNote" : "Well-established. Only the 12-month leg is modelled here; the 30-day and 24-month legs are tracked separately.",
+      "sourceNote" : "Well-established. Two of the three legs are modelled: this 12-month one and bofa.4-24 for the 24-month. The 30-day leg is NOT modelled at all — Vest will not warn you about two BofA cards inside 30 days. Said plainly because the previous note claimed all three were tracked, which stops anyone checking.",
       "threshold" : 3,
       "windowMonths" : 12
     },
@@ -1032,5 +1033,5 @@
     }
   ],
   "schemaVersion" : 1,
-  "updatedOn" : "2026-08-28"
+  "updatedOn" : "2026-08-29"
 }
