@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedOn": "2026-08-23",
+  "generatedOn": "2026-08-31",
   "candidates": [
     {
       "id": "181d957982f290c0",
@@ -62,6 +62,66 @@
       "guessedValueCents": 20000,
       "status": "new",
       "note": "Lead only \u2014 nobody has read these terms. Open the issuer's own page before publishing."
+    },
+    {
+      "id": "2287a92274f901bc",
+      "source": "doctorofcredit",
+      "sourceURL": "https://www.doctorofcredit.com/best-posts-last-week-new-transfer-partner-increased-delta-offers-expired-3000-bonus/",
+      "headline": "Best Posts Last Week: New Transfer Partner, Increased Delta Offers & Expired $3,000 Bonus",
+      "publishedOn": "2026-08-31",
+      "seenOn": "2026-08-31",
+      "guessedInstitution": null,
+      "guessedValueCents": 300000,
+      "status": "new",
+      "note": "Lead only \u2014 nobody has read these terms. Open the issuer's own page before publishing."
+    },
+    {
+      "id": "8417820fcec4b10d",
+      "source": "doctorofcredit",
+      "sourceURL": "https://www.doctorofcredit.com/pa-northwest-bank-160-checking-bonus/",
+      "headline": "[NY, OH, IN, PA] Northwest Bank $400 Checking Bonus",
+      "publishedOn": "2026-08-31",
+      "seenOn": "2026-08-31",
+      "guessedInstitution": null,
+      "guessedValueCents": 40000,
+      "status": "new",
+      "note": "Lead only \u2014 nobody has read these terms. Open the issuer's own page before publishing."
+    },
+    {
+      "id": "c628082bdbf4cadf",
+      "source": "doctorofcredit",
+      "sourceURL": "https://www.doctorofcredit.com/ms-only-grand-bank-200-checking-bonus/",
+      "headline": "[MS Only] Grand Bank $250 Checking Bonus",
+      "publishedOn": "2026-08-31",
+      "seenOn": "2026-08-31",
+      "guessedInstitution": null,
+      "guessedValueCents": 25000,
+      "status": "new",
+      "note": "Lead only \u2014 nobody has read these terms. Open the issuer's own page before publishing."
+    },
+    {
+      "id": "bb4821b5751e8e50",
+      "source": "doctorofcredit",
+      "sourceURL": "https://www.doctorofcredit.com/chase-you-invest-bonus-200-625-bonus-with-25000-250000-investment-account/",
+      "headline": "J.P. Morgan Self-Directed Investing Up To $1,000 Bonus With $5k-$250k Invested [+$100 Rakuten]",
+      "publishedOn": "2026-08-30",
+      "seenOn": "2026-08-31",
+      "guessedInstitution": null,
+      "guessedValueCents": 100000,
+      "status": "new",
+      "note": "Lead only \u2014 nobody has read these terms. Open the issuer's own page before publishing."
+    },
+    {
+      "id": "756186f5b99eddcc",
+      "source": "capitalone-checking",
+      "sourceURL": "https://www.capitalone.com/bank/checking-accounts/",
+      "headline": "Capital One \u2014 checking offers \u2014 page changed",
+      "publishedOn": null,
+      "seenOn": "2026-08-31",
+      "guessedInstitution": "Capital One",
+      "guessedValueCents": null,
+      "status": "new",
+      "note": "The page's visible text changed. That is not an offer \u2014 it may be a layout tweak. Open it and see."
     }
   ],
   "dismissed": [
@@ -69,6 +129,6 @@
   ],
   "pageHashes": {
     "chase-checking": "38f47fba69e5a17726655251cae42fb78f7c79853c01341e09b3c8a64c911119",
-    "capitalone-checking": "38de587f823fd7263a07537c1285880fa0082f4b4953135f29fca2bc75fb95fb"
+    "capitalone-checking": "9bf03d5a46fee3ae13a9468410dd64078fb89fd45a5c390dfe61725d3ad0ad92"
   }
 }
